@@ -1,8 +1,7 @@
 import { Outlet } from "react-router-dom";
 import { AuthProvider } from "../contexts/AuthContext";
-// import Navbar from "../components/Navbar";
+import Navbar from "../components/Navbar";
 // import FooterBar from "../components/Footer";
-import "../index.css";
 import { ThemeProvider } from "../contexts/ThemeContext";
 
 export default function Layout() {
@@ -12,7 +11,7 @@ export default function Layout() {
             <AuthProvider>
                 <ThemeProvider>
                     <div>
-                        {/* <Navbar appName={"AlfA Music"} /> */}
+                        <Navbar/>
                     </div>
                     <div>
                         <div className="my-element">
