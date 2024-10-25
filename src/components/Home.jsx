@@ -6,6 +6,7 @@ import slider3 from "../assets/slider3.jpeg";
 import slider4 from "../assets/slider4.jpg";
 
 export default function Home() {
+
     useEffect(() => {
         // Step 1: Get DOM elements
         let nextDom = document.getElementById("next");
@@ -18,7 +19,6 @@ export default function Home() {
             let SliderDom = carouselDom.querySelector(".list");
             let thumbnailBorderDom = carouselDom.querySelector(".thumbnail");
             let thumbnailItemsDom = thumbnailBorderDom ? thumbnailBorderDom.querySelectorAll(".item") : [];
-            let timeDom = carouselDom.querySelector(".time");
         
             // Ensure thumbnailItemsDom is not empty before appending
             if (thumbnailBorderDom && thumbnailItemsDom.length > 0) {

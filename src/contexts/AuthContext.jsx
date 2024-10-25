@@ -1,4 +1,4 @@
-import { createContext, useReducer } from "react";
+import { createContext, useReducer, useContext } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
 import PropTypes from "prop-types";
 
@@ -71,8 +71,16 @@ function AuthProvider({ children }) {
     );
 }
 
+function useAuth(type) {
+    const context = useContext(AuthContext);
+    if (context === undefined) {
+        throw new Error("useAuth must be used within an AuthProvider");
+    }
+    return context[type];
+}
+
 AuthProvider.propTypes = {
     children: PropTypes.node.isRequired,
 };
 
-export { AuthContext, AuthProvider};
+export { AuthContext, AuthProvider, useAuth };
